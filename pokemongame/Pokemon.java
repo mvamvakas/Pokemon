@@ -167,7 +167,7 @@ public class Pokemon {
      * @return
      */
     public Move getSlotB() {
-        return slotA;
+        return slotB;
     }
 
     /**
@@ -176,7 +176,7 @@ public class Pokemon {
      * @return
      */
     public Move getSlotC() {
-        return slotA;
+        return slotC;
     }
 
     /**
@@ -185,7 +185,7 @@ public class Pokemon {
      * @return
      */
     public Move getSlotD() {
-        return slotA;
+        return slotD;
     }
 
     /**
@@ -490,6 +490,16 @@ public class Pokemon {
         if (slotD.getName().equals("None") == false) {
             str += slotD.getName() + "\n";
         }
+        return str;
+    }
+    
+    public String printAttacks(){
+        String str = "";
+        str += "1. " + slotA.getName() + "\n";
+        str += "2. " + slotB.getName() + "\n";
+        str += "3. " + slotC.getName() + "\n";
+        str += "4. " + slotD.getName();
+        
         return str;
     }
 }

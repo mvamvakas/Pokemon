@@ -29,16 +29,19 @@ public class Game {
     public void run() {
         setMoveMap();
         Pokemon pokemon = new Pokemon();
-        //BattlePKM pkm = new BattlePKM();
+        BattlePKM pkm = new BattlePKM();
+        BattlePKM pkm2 = new BattlePKM();
         try {
             pokemon = new Pokemon("Pikachu", "Pokebro", "Electric", "Steel", moveMap.get("Absorb"), moveMap.get("Acid"), moveMap.get("None"), moveMap.get("None"), 5, 50, 5, 5, 5, 5, 5);
-          //  pkm = new BattlePKM("Pikachu", "Pokebro", "Electric", "Steel", moveMap.get("Absorb"), moveMap.get("Acid"), moveMap.get("None"), moveMap.get("None"), 5, 50, 5, 5, 5, 5, 5);
+            pkm = new BattlePKM("Pikachu", "Pokebro", "Electric", "Steel", moveMap.get("Absorb"), moveMap.get("Agility"), moveMap.get("None"), moveMap.get("None"), 5, 50, 5, 5, 5, 5, 5);
+            pkm2 = new BattlePKM("Mudkip", "Pokebro2", "Water", "None", moveMap.get("Absorb"), moveMap.get("Agiity"), moveMap.get("None"), moveMap.get("None"), 5, 50, 5, 5, 5, 5, 5);
         } 
         catch (IncorrectInputException e) {
             System.out.println("Incorrect Input");
         }
         System.out.println(pokemon.toString());       
-        
+        Battle battle = new Battle(pkm, pkm2);
+        battle.runBattle();
     }
 
     /**
